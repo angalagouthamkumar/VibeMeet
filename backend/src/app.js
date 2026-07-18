@@ -17,7 +17,12 @@ const io = connectToSocket(server);
 
 
 app.set("port", process.env.PORT || 3000);
-app.use(cors());
+app.use(cors({
+    origin: "https://vibe-meet-eta.vercel.app", 
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
