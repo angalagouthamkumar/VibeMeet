@@ -1,0 +1,22 @@
+# Ignore dependencies in both project directories
+backend/node_modules/
+frontend/node_modules/
+
+# Production builds
+frontend/dist/
+frontend/build/
+
+# Environmental variables / Secrets
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
