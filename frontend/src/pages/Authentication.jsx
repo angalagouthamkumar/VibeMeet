@@ -14,7 +14,6 @@ import InputAdornment from "@mui/material/InputAdornment"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import Snackbar from "@mui/material/Snackbar"
 
-// Material UI Icons
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import Visibility from "@mui/icons-material/Visibility"
 import VisibilityOff from "@mui/icons-material/VisibilityOff"
@@ -71,7 +70,6 @@ export default function Authentication() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   
-  // State to toggle the eye icon / password visibility
   const [showPassword, setShowPassword] = useState(false)
   
   const [error, setError] = useState(null)
@@ -109,7 +107,6 @@ export default function Authentication() {
     setError(null)
   }
 
-  // Toggle dynamic visibility state
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
   }
@@ -129,7 +126,6 @@ export default function Authentication() {
           position: "relative"
         }}
       >
-        {/* Transparent Top-Left Back Button with Orange Accent Hover */}
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate("/")}
@@ -242,7 +238,6 @@ export default function Authentication() {
                   placeholder="Enter username"
                 />
 
-                {/* Password field with dynamic show/hide toggle */}
                 <TextField
                   label="Password"
                   type={showPassword ? "text" : "password"}

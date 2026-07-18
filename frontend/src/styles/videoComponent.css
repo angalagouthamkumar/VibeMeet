@@ -910,7 +910,7 @@
 .home-navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Pushes the profile pill cleanly to the right edge */
+    justify-content: space-between; 
     padding: 0 40px;
     box-sizing: border-box;
 }
@@ -921,7 +921,7 @@
     align-items: center;
 }
 
-/* Rounded interactive element container pill */
+
 .profile-trigger-zone {
     display: flex;
     align-items: center;

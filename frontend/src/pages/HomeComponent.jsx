@@ -25,7 +25,7 @@ function HomeComponent() {
         const storedHistory = JSON.parse(localStorage.getItem('vibeMeet_history')) || [];
         setMeetingHistory(storedHistory);
 
-        // Click handler to close profile menu when clicking outside
+       
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setShowProfileMenu(false);
@@ -70,14 +70,12 @@ function HomeComponent() {
         localStorage.removeItem('vibeMeet_history');
     };
 
-    // ✅ LOGOUT LOGIC PIPELINE
     const handleLogout = () => {
-        // Clear session authentication tokens/cookies here if applicable
-        localStorage.removeItem('vibeMeet_history'); // Clean history out if needed on total signout
         
-        // Redirect back out to landing or authorization route context safely
-        navigate('/'); 
-        window.location.reload(); // Hard refresh to reset memory spaces clean
+        localStorage.removeItem('vibeMeet_history'); 
+
+        navigate('/home'); 
+        window.location.reload();
     };
 
     return (
@@ -88,7 +86,7 @@ function HomeComponent() {
                     <span>VibeMeet</span>
                 </div>
 
-                {/* ✅ NEW PROFILE UTILITY CONTROLS */}
+                
                 <div className="navbar-profile-wrapper" ref={dropdownRef}>
                     <div 
                         className={`profile-trigger-zone ${showProfileMenu ? 'active' : ''}`}
@@ -100,7 +98,7 @@ function HomeComponent() {
                         <span className="navbar-username-label">{username}</span>
                     </div>
 
-                    {/* INTERACTIVE GLASS LOGOUT DROPDOWN */}
+                   
                     {showProfileMenu && (
                         <div className="profile-glass-dropdown">
                             <div className="dropdown-user-details">

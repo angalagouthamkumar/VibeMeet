@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { io } from "socket.io-client";
-// ✅ FIX 1: Import the native router navigation hook from react-router-dom
 import { useNavigate } from 'react-router-dom'; 
 import "../styles/videoComponent.css";
 
-const server_url = "http://localhost:3000";
+const server_url = import.meta.env.VITE_SERVER_URL || "http://localhost:3000";
 
 const peerConfigConnections = {
     iceServers: [
@@ -17,7 +16,6 @@ const peerConfigConnections = {
 };
 
 const VideoMeet = () => {
-    // ✅ FIX 2: Initialize the navigation router action handler engine
     const navigate = useNavigate(); 
 
     const connections = useRef({});

@@ -33,9 +33,6 @@ const connectToSocket = (server) => {
       connections[path].forEach((clientId) => {
           io.to(clientId).emit("user-joined", socket.id, clients);
       });
-
-      // ✅ FIX: Chat history emitting block removed completely from here. 
-      // New users joining will not automatically see old messages or open the panel.
     });
 
     socket.on("signal", (toId, message) => {
